@@ -3,10 +3,19 @@
 // But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output “Buzz”. For numbers which are multiples of both three and five output “FizzBuzz”.
 
 const fizzBuzz = (n)=>{
-  let arr =[];
-  for (let i=1;i<=n;i++){
-   arr.push(i)
-  }return arr
+  let result = [];
+  for(let i = 1; i <= n; i++) {
+        if(i % 3 == 0 && i % 5 == 0) {
+            result.push("FizzBuzz");
+        } else if(i % 3 == 0) {
+            result.push("Fizz");
+        } else if(i % 5 == 0) {
+            result.push("Buzz");
+        } else {
+            result.push(String(i));
+        };
+    };
+    return result;
 }
 
-console.log(fizzBuzz(10))
+fizzBuzz(15)
